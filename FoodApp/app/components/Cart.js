@@ -1,11 +1,6 @@
-import React,{Component} from "react";
-import {
-  StyleSheet,
-  Text,
-  View,
-  TouchableOpacity,
-} from "react-native";
-
+import React, { Component } from "react";
+import { StyleSheet, Text, View, TouchableOpacity } from "react-native";
+import { FlatList } from "react-native-gesture-handler";
 
 import EmptyCart from "./common/EmptyCart";
 
@@ -14,37 +9,36 @@ export default class Cart extends React.Component {
     super(props);
   }
   render() {
-  
-    return 
-    (
+    return (
       <View style={styles.container}>
-      <TouchableOpacity style={styles.orderbtn}>
+        <FlatList />
+        <TouchableOpacity style={styles.orderbtn}>
           <Text style={styles.loginText}>Place Order</Text>
         </TouchableOpacity>
-        </View>
+      </View>
     );
-    }
   }
+}
 
-    const styles = StyleSheet.create({
-      container: {
-        flex: 1,
-        backgroundColor: 'white',
-        alignItems: 'center',
-        justifyContent: 'center',
-      },
-      loginBtn:{
-        width:"80%",
-        backgroundColor:"#fb5b5a",
-        borderRadius:25,
-        height:50,
-        alignItems:"center",
-        justifyContent:"center",
-        marginTop:40,
-        marginBottom:10
-      },
-    });
-    /*return  <ImageBackground source={require('./mala_background.jpg')} style={{width:'100%', height:'100%'}} resizeMode='cover'>
+const styles = StyleSheet.create({
+  container: {
+    flex: 1,
+    backgroundColor: "white",
+    alignItems: "center",
+    justifyContent: "center",
+  },
+  loginBtn: {
+    width: "80%",
+    backgroundColor: "#fb5b5a",
+    borderRadius: 25,
+    height: 50,
+    alignItems: "center",
+    justifyContent: "center",
+    marginTop: 40,
+    marginBottom: 10,
+  },
+});
+/*return  <ImageBackground source={require('./mala_background.jpg')} style={{width:'100%', height:'100%'}} resizeMode='cover'>
     <View>
     <PaystackWebView
           buttonText='Pay Now'
@@ -61,4 +55,3 @@ export default class Cart extends React.Component {
     </View>
    }
   }*/
-
